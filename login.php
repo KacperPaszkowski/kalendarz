@@ -16,6 +16,8 @@
                     
                     if($row['haslo'] == $_POST['pass']){
                         $_SESSION['auth'] = true;
+                        header("Location: /kalendarz/index.php");
+                        die();
                     }
                 }
             }
