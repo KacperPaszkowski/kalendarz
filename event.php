@@ -5,14 +5,27 @@ $password = "";
 
 $conn = new mysqli($servername, $username, $password, "kalendarz");
 
-$sql = "INSERT INTO kalendarz (, lastname, email)
-VALUES ('John', 'Doe', 'john@example.com')";
 
-if ($conn->query($sql) === TRUE) {
-  echo "New record created successfully";
-} else {
-  echo "Error: " . $sql . "<br>" . $conn->error;
+if($_POST)
+{    
+     $data = $_POST['data'];
+     $godzina1 = $_POST['godzina1'];
+     $godzina2 = $_POST['godzina2'];
+     $tytul = $_POST['tytul'];
+     $opis = $_POST['opis'];
+     echo $data;
+     $sql = "INSERT INTO event 
+     VALUES ('','$data','$godzina1','$godzina2','$tytul','$opis',1)";
+     if (mysqli_query($conn, $sql)) {
+        echo "New record has been added successfully !";
+     } else {
+        echo "Error: " . $sql . ":-" . mysqli_error($conn);
+     }
+     mysqli_close($conn);
 }
+
+
+
 
 class Wydarzenie{
 
@@ -44,7 +57,6 @@ class Wydarzenie{
 
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,7 +67,7 @@ class Wydarzenie{
 </head>
 
 <body>
-    <form>
+    <form method="POST">
         <label for="data">Data</label>
         <input type="date" name="data" id=""> </br></br>
 
@@ -71,8 +83,9 @@ class Wydarzenie{
 
         <label for="opis">Notka</label>
         <input type="text" name="opis" id=""> </br></br>
-
         
+        <input type="submit">Wyślij</input>
+
     </form>  
 </body>
 </html> 
