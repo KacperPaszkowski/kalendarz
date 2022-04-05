@@ -79,3 +79,4 @@ function updateTP() {
     const top = String(mapHour(time, 0, 24, 0, 100)) + '%';
     timeline_p.style.top = top;
 }
+
