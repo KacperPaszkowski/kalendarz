@@ -41,3 +41,7 @@ body{
     background-color: orange;
     width: 90%;
 }
+
+.e-title, .e-info{
+    margin-left: 5%;
+}

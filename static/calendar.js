@@ -15,7 +15,7 @@ for (let i = 1; i <= 7; i++) {
 
     fetch("get_events.php?date="+day)
     .then(resp => resp.json())
-    .then(resp => resp.length > 0 ? add_event(pref, resp[0].godz_start, resp[0].godz_koniec, resp[0]) : () => {})
+    .then(resp => resp.length > 0 ? resp.forEach(event => add_event(pref, event.godz_start, event.godz_koniec, event)) : () => {})
 
     for (var j = 0; j < pref.childNodes.length; j++) {
         if (pref.childNodes[j].className == "c-title") {
@@ -24,10 +24,10 @@ for (let i = 1; i <= 7; i++) {
     }
     c_cont.appendChild(pref)
 
-//   week.push(day)
 }
 
 const add_event = (dst, from, to, event) => {
+    console.log("CALL")
     var calendar_event = document.getElementById('event-prefab').cloneNode(true);
     calendar_event.removeAttribute('id');
 
