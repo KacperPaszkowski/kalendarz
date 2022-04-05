@@ -25,8 +25,13 @@
         <label for="opis">Notka</label>
         <input type="text" name="opis" id=""> </br></br>
         
-        <input type="submit">Wyślij</input>
+        <input type="submit" value="Dodaj"></input>
 
-    </form>  
+        </br></br>
+        </br></br>
+
+    </form> 
+
+    
 </body>
 </html> 
