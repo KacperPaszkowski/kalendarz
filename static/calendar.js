@@ -1,9 +1,10 @@
 var c_day = document.getElementById("calendar-prefab");
 var c_cont = document.getElementById("calendar-container");
+var c_timeline = document.getElementById("timeline");
+var timeline_p = document.getElementById("timeline-p");
 
 
 let curr = new Date 
-// let week = []
 
 for (let i = 1; i <= 7; i++) {
     let first = curr.getDate() - curr.getDay() + i 
@@ -26,8 +27,15 @@ for (let i = 1; i <= 7; i++) {
 
 }
 
+for(let k = 0; k < 24; k++){
+    let h = document.createElement('p');
+    h.innerHTML = (String(k).length == 1 ? "0"+String(k) : String(k)) + ":00"
+    h.style.position = 'absolute';
+    h.style.top = String(mapHour(k, 0, 24, 0, 100)) + '%';
+    c_timeline.appendChild(h)
+}
+
 const add_event = (dst, from, to, event) => {
-    console.log("CALL")
     var calendar_event = document.getElementById('event-prefab').cloneNode(true);
     calendar_event.removeAttribute('id');
 
@@ -60,4 +68,14 @@ const add_event = (dst, from, to, event) => {
 
 function mapHour(hour, from_in, to_in, from_out, to_out) {
     return (hour - from_in) * (to_out - from_out) / (to_in - from_in) + from_out;
+}
+
+var updateTimelineP = window.setInterval(updateTP, 10000);
+updateTP()
+function updateTP() {
+    var day = new Date();
+    console.log(day.getHours(), day.getMinutes())
+    const time = parseInt(day.getHours()) + (parseInt(day.getMinutes()) / 60)
+    const top = String(mapHour(time, 0, 24, 0, 100)) + '%';
+    timeline_p.style.top = top;
 }
