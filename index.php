@@ -6,6 +6,11 @@
         <div class="header">
         </div>
 
+        <div class="c-event" id="event-prefab">
+            <h4 class="e-title"></h4>
+            <p class="e-info"></p>
+        </div>
+
         <div class="main-container" id="calendar-container">
         <div class="calendar-entry" id="calendar-prefab">
             <div class="c-title"></div>

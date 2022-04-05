@@ -12,8 +12,15 @@
         $tytul = $_POST['tytul'];
         $opis = $_POST['opis'];
 
+        if($_POST['user']){
+            $user_id = $_POST['user'];
+        }
+        else{
+            $user_id = 1;
+        }
+
         $sql = "INSERT INTO event 
-        VALUES ('','$data','$godzina1','$godzina2','$tytul','$opis',1)";
+        VALUES ('','$data','$godzina1','$godzina2','$tytul','$opis',$user_id)";
         
         if (mysqli_query($conn, $sql)) {
             $response = [ 'status' => 1];
