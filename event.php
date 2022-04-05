@@ -32,19 +32,6 @@
 
     </form> 
 
-    <form method="POST" action="registration.php">
-        
-    <label for="Nazwa">Nazwa Użytkownika</label>
-        <input type="text" name="nazwa" id=""> </br></br>
-
-        <label for="login1">Login</label>
-        <input type="text" name="login1" id=""> </br></br>
-
-        <label for="haslo1">Hasło</label>
-        <input type="password" name="haslo1" id=""> </br></br>
-        
-        <input type="submit" value="Zarejestruj się"></input>
-
-    </form>
+    
 </body>
 </html> 
