@@ -1,62 +1,3 @@
-<?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-
-$conn = new mysqli($servername, $username, $password, "kalendarz");
-
-
-if($_POST)
-{    
-     $data = $_POST['data'];
-     $godzina1 = $_POST['godzina1'];
-     $godzina2 = $_POST['godzina2'];
-     $tytul = $_POST['tytul'];
-     $opis = $_POST['opis'];
-     echo $data;
-     $sql = "INSERT INTO event 
-     VALUES ('','$data','$godzina1','$godzina2','$tytul','$opis',1)";
-     if (mysqli_query($conn, $sql)) {
-        echo "New record has been added successfully !";
-     } else {
-        echo "Error: " . $sql . ":-" . mysqli_error($conn);
-     }
-     mysqli_close($conn);
-}
-
-
-
-
-class Wydarzenie{
-
-    public $data;
-    public $godzina1;
-    public $godzina2;
-    public $tytul;
-    public $opis;
-
-    public function UstawDate($data){
-        $this->data = $data;
-    }
-//=========godz_start=========
-    public function UstawGodzineStart($godzina1){
-        $this->godzina1 = $godzina1;
-    }
-    public function UstawGodzineKoniec($godzina2){
-        $this->godzina2 = $godzina2;
-    }
-//=========godz_koniec========
-    public function UstawTytul($tytul){
-        $this->tytul = $tytul;
-    }
-    public function UstawOpis($opis){
-        $this->opis = $opis;
-    }
-
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -67,7 +8,7 @@ class Wydarzenie{
 </head>
 
 <body>
-    <form method="POST">
+    <form method="POST" action="add_event.php">
         <label for="data">Data</label>
         <input type="date" name="data" id=""> </br></br>
 
