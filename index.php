@@ -1,6 +1,17 @@
+<?php
+    session_start();
+    if(!key_exists('auth', $_SESSION)){
+        header("Location: /kalendarz/login.php");
+        die();
+    }
+?>
+
+
 <html>
     <header>
         <link rel="stylesheet" href="static/index.css">
+        <title><?php 
+            echo $_SESSION['id']?></title>
     </header>
     <body>
         <div class="header">
