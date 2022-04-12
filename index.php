@@ -15,9 +15,13 @@
     </header>
     <body>
         <div class="header">
-            <div onclick="GuzikWydarzenie()" class="dim">Wydarzenie</div>
+            <div onclick="GuzikWydarzenie()" onclick="GuzikWydarzenieOkno()" class="dim">Wydarzenie</div>
         </div>
-        <div class="tlo"></div>
+        <div class="tlo" id="tlo"></div>
+        <div class="tlo2" id="tlo">
+            <div class="okno" id="okno"></div>
+        </div>
+        
 
         <div class="c-event" id="event-prefab">
             <h4 class="e-title"></h4>

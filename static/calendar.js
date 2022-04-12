@@ -3,7 +3,7 @@ var c_cont = document.getElementById("calendar-container");
 var c_timeline = document.getElementById("timeline");
 var timeline_p = document.getElementById("timeline-p");
 
-
+document.getElementById('tlo').style.display = 'none'
 let curr = new Date 
 
 for (let i = 1; i <= 7; i++) {
@@ -80,11 +80,17 @@ function updateTP() {
     timeline_p.style.top = top;
 }
 function GuzikWydarzenie() {
-    var x = document.getElementById("dim");
-    if (x.style.display === "none") {
-      x.style.display = "block";
+    var x = document.getElementById("tlo");
+
+    var y = document.getElementById("okno");
+    if (x.style.display == "none") {
+      x.style.display = "flex";
+      y.style.display = "flex";
+      x.style.opacity = "0.5";
     } else {
       x.style.display = "none";
+      y.style.display = "none";
     }
   }
+ 
   
