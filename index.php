@@ -14,8 +14,7 @@
             echo $_SESSION['id']?></title>
     </header>
     <body>
-        <div class="header">
-        </div>
+        <div class="header"></div>
 
         <div class="c-event" id="event-prefab">
             <h4 class="e-title"></h4>

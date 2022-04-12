@@ -8,7 +8,7 @@
 
 .login{
     width: 20%;
-    height: 30%;
+    height: 40%;
     background-color: rgb(245, 245, 245);
     display: flex;
     justify-content: center;
@@ -16,5 +16,5 @@
 }
 
 .login-i{
-    margin-top: 20%;
+    margin-top: 10%;
 }
