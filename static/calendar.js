@@ -79,4 +79,12 @@ function updateTP() {
     const top = String(mapHour(time, 0, 24, 0, 100)) + '%';
     timeline_p.style.top = top;
 }
-
+function GuzikWydarzenie() {
+    var x = document.getElementById("dim");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
+  

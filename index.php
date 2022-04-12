@@ -14,7 +14,10 @@
             echo $_SESSION['id']?></title>
     </header>
     <body>
-        <div class="header"></div>
+        <div class="header">
+            <div onclick="GuzikWydarzenie()" class="dim">Wydarzenie</div>
+        </div>
+        <div class="tlo"></div>
 
         <div class="c-event" id="event-prefab">
             <h4 class="e-title"></h4>
