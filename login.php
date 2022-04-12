@@ -10,13 +10,14 @@
 
         if($_POST['login'] && $_POST['pass']){
             $conn = new mysqli($servername, $username, $password, "kalendarz");
-            $sql = 'SELECT haslo FROM uzytkownik WHERE login="'.$_POST['login'].'"';
+            $sql = 'SELECT id, haslo FROM uzytkownik WHERE login="'.$_POST['login'].'"';
             $result = $conn->query($sql);
             if ($result != false && $result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) {
                     
                     if($row['haslo'] == $_POST['pass']){
                         $_SESSION['auth'] = true;
+                        $_SESSION['id'] = $row['id'];
                         header("Location: /kalendarz/index.php");
                         die();
                     }
