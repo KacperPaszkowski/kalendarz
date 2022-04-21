@@ -14,7 +14,7 @@ for (let i = 1; i <= 7; i++) {
     pref = c_day.cloneNode(true);
     pref.removeAttribute('id');
 
-    fetch("get_events.php?date="+day)
+    fetch("get_events.php?date="+day+"&user=1")
     .then(resp => resp.json())
     .then(resp => resp.length > 0 ? resp.forEach(event => add_event(pref, event.godz_start, event.godz_koniec, event)) : () => {})
 

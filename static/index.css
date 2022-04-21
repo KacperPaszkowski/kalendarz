@@ -71,15 +71,13 @@ p{
     margin: 0;
 }
 .dim{
-    background-color: #4d6199;
+    background-color: #384770;
     color: white;
-    padding: 15px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 20px;
     cursor: pointer;
-    border-radius: 15px 50px;
     width: 10%;
     height: 15%;
     display: flex;
@@ -87,15 +85,12 @@ p{
     justify-content: center;
     position: relative;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    height: 100%;
 
   }
   .dim:hover {background-color: #03337a}
 
-  .dim:active {
-    background-color: #4d6199;
-    box-shadow: 0 5px #666;
-    transform: translateY(4px);
-  }
+  
   .tlo{
       position: absolute;
       width: 100%;
@@ -119,12 +114,46 @@ p{
 }
 .okno{
     width: 35%;
-    height: 25%;
-    background-color: #4d6199;
-    position: absolute;
+    height: 40%;
+    background-color: #ffffff;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 101;
     display: none;
+}
+
+.close-event{
+    width: 15%;
+    height: 10%;
+    position: absolute;
+    bottom: 3%;
+    right: 3%;
+    background-color: #384770;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.close-event:hover{
+    background-color: #252f4b;
+}
+
+.add-event{
+    width: 15%;
+    height: 10%;
+    position: absolute;
+    bottom: 3%;
+    right: 21%;
+    background-color: #384770;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.add-event:hover{
+    background-color: #252f4b;
 }

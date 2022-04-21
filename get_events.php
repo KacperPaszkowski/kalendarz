@@ -8,7 +8,10 @@
     $response = [];
     if(array_key_exists('date', $_GET)){
         $date = $_GET['date'];
-        $sql = "SELECT * FROM event WHERE data = '$date'";
+        session_start();
+        $user =  $_SESSION['id'];
+        $sql = "SELECT * FROM event WHERE data = '$date' AND uzytkownik_id = '$user'";
+
     }
     else{
         $sql = "SELECT * FROM event";

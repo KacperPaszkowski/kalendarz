@@ -28,8 +28,8 @@
             $response = [ 'status' => 0];
         }
         mysqli_close($conn);
-        header('Content-type: application/json');
-        echo json_encode($response);
+        header("Location: /kalendarz/index.php");
+        die();
 
     }
 
