@@ -176,4 +176,5 @@ p{
     justify-content: center;
     align-items: center;
     z-index: 101;
+    display: none;
 }

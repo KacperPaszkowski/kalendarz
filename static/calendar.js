@@ -94,5 +94,7 @@ function GuzikWydarzenie() {
  
 function showEventDialog(event)
 {
-    var window = document.getElementById('eve')
+    var window = document.getElementById('event-info')
+    window.style.display = "block"
+    document.getElementById('tlo').style.display = "block"
 }
