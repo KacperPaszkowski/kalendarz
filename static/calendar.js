@@ -74,7 +74,6 @@ var updateTimelineP = window.setInterval(updateTP, 10000);
 updateTP()
 function updateTP() {
     var day = new Date();
-    console.log(day.getHours(), day.getMinutes())
     const time = parseInt(day.getHours()) + (parseInt(day.getMinutes()) / 60)
     const top = String(mapHour(time, 0, 24, 0, 100)) + '%';
     timeline_p.style.top = top;

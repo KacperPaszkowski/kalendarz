@@ -20,7 +20,7 @@
         <div class="tlo" id="tlo"></div>
         <div class="tlo2" id="tlo">
             <div class="okno" id="okno">
-            <form method="POST" action="add_event.php">
+            <form method="POST" action="add_event.php" name="event-add" id="event-add">
                 <label for="data">Data</label>
                 <input type="date" name="data" id="" required> </br></br>
 
@@ -39,20 +39,19 @@
 
                 <label for="user">Użytkownik</label>
                 <input type="text" name="user" id="" required> </br></br>
-                
-                <input type="submit" value="Dodaj"></input>
+
+                <input type="hidden" name="user2" value="<?php echo $_SESSION['id'] ?>">
 
                 </br></br>
                 </br></br>
-
-            </form>
                 <div onclick="GuzikWydarzenie()" class="close-event"><h4>Zamknij</h4></div>
-                <div class="add-event"><h4>Zapisz</h4></div>
+                <div class="add-event" onclick="document.forms['event-add'].submit();"><h4>Zapisz</h4></div>
+                </form>
             </div>
         </div>
         
 
-        <div class="c-event" id="event-prefab">
+        <div class="c-event" id="event-prefab" onclick="console.log('dssa')">
             <h4 class="e-title"></h4>
             <p class="e-info"></p>
         </div>

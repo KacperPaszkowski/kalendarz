@@ -10,7 +10,7 @@
         $date = $_GET['date'];
         session_start();
         $user =  $_SESSION['id'];
-        $sql = "SELECT * FROM event WHERE data = '$date' AND uzytkownik_id = '$user'";
+        $sql = "SELECT * FROM event WHERE data = '$date' AND (uzytkownik_id = '$user' OR uzytkownik_id_2 = '$user')";
 
     }
     else{

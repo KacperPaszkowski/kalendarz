@@ -44,6 +44,15 @@ body{
     position: absolute;
     background-color: orange;
     width: 90%;
+    cursor: pointer;
+}
+
+.c-event:hover{
+    background-color: rgb(255, 178, 36);
+}
+
+.c-event h4,p{
+    user-select: none;
 }
 
 .e-title, .e-info{

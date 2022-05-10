@@ -14,13 +14,14 @@
 
         if($_POST['user']){
             $user_id = $_POST['user'];
+            $user2_id = $_POST['user2'];
         }
         else{
             $user_id = 1;
         }
 
         $sql = "INSERT INTO event 
-        VALUES ('','$data','$godzina1','$godzina2','$tytul','$opis',$user_id)";
+        VALUES ('','$data','$godzina1','$godzina2','$tytul','$opis',$user_id,$user2_id)";
         
         if (mysqli_query($conn, $sql)) {
             $response = [ 'status' => 1];
