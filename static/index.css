@@ -166,3 +166,14 @@ p{
 .add-event:hover{
     background-color: #252f4b;
 }
+
+.event-info{
+    width: 35%;
+    height: 40%;
+    background-color: #ffffff;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 101;
+}

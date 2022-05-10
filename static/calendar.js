@@ -92,4 +92,7 @@ function GuzikWydarzenie() {
     }
   }
  
-  
+function showEventDialog(event)
+{
+    var window = document.getElementById('eve')
+}

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 10 Maj 2022, 11:45
+-- Czas generowania: 10 Maj 2022, 12:04
 -- Wersja serwera: 10.4.19-MariaDB
 -- Wersja PHP: 8.0.7
 
@@ -45,6 +45,28 @@ CREATE TABLE `event` (
 INSERT INTO `event` (`id`, `data`, `godz_start`, `godz_koniec`, `tytul`, `notatka`, `uzytkownik_id`, `uzytkownik_id_2`) VALUES
 (16, '2022-05-10', '11:40', '13:40', 'dsadsa', 'dsfgsdfgsdf', 3, 1);
 
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `uzytkownik`
+--
+
+CREATE TABLE `uzytkownik` (
+  `id` int(11) NOT NULL,
+  `nazwa` text NOT NULL,
+  `login` text NOT NULL,
+  `haslo` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Zrzut danych tabeli `uzytkownik`
+--
+
+INSERT INTO `uzytkownik` (`id`, `nazwa`, `login`, `haslo`) VALUES
+(1, 'admin', 'admin', 'admin'),
+(3, 'test', 'test', 'test'),
+(4, 'test1', 'test1', 'test1');
+
 --
 -- Indeksy dla zrzutów tabel
 --
@@ -58,6 +80,12 @@ ALTER TABLE `event`
   ADD KEY `fk_l_id` (`uzytkownik_id_2`);
 
 --
+-- Indeksy dla tabeli `uzytkownik`
+--
+ALTER TABLE `uzytkownik`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT dla zrzuconych tabel
 --
 
@@ -66,6 +94,12 @@ ALTER TABLE `event`
 --
 ALTER TABLE `event`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT dla tabeli `uzytkownik`
+--
+ALTER TABLE `uzytkownik`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Ograniczenia dla zrzutów tabel

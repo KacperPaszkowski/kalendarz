@@ -49,9 +49,14 @@
                 </form>
             </div>
         </div>
+        <div class="tlo2">
+            <div class="event-info" id="event-info">   
+            </div>
+        </div>
+        
         
 
-        <div class="c-event" id="event-prefab" onclick="console.log('dssa')">
+        <div class="c-event" id="event-prefab" onclick="showEventDialog(this)">
             <h4 class="e-title"></h4>
             <p class="e-info"></p>
         </div>
