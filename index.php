@@ -4,6 +4,19 @@
         header("Location: /kalendarz/login.php");
         die();
     }
+    $pobierz = "SELECT nazwa, id FROM uzytkownik ";
+    $wynik = $conn->query($pobierz);
+    $ile_znalezionych = $wynik->num_rows;
+    
+    echo 'nazwa';
+    echo 'id';
+    for ($i=0; $i < $ile_znalezionych; $i++)
+    {
+        $wiersz = $wynik->fetch_assoc();
+        echo $wiersz['nazwa'];
+        echo $wiersz['id'];
+                
+    }
 ?>
 
 
@@ -38,7 +51,9 @@
                 <input type="text" name="opis" id=""> </br></br>
 
                 <label for="user">Użytkownik</label>
-                <input type="text" name="user" id="" required> </br></br>
+                <select>
+
+                </select>
 
                 <input type="hidden" name="user2" value="<?php echo $_SESSION['id'] ?>">
 
@@ -49,14 +64,9 @@
                 </form>
             </div>
         </div>
-        <div class="tlo2">
-            <div class="event-info" id="event-info">   
-            </div>
-        </div>
-        
         
 
-        <div class="c-event" id="event-prefab" onclick="showEventDialog(this)">
+        <div class="c-event" id="event-prefab" onclick="console.log('dssa')">
             <h4 class="e-title"></h4>
             <p class="e-info"></p>
         </div>
