@@ -4,19 +4,11 @@
         header("Location: /kalendarz/login.php");
         die();
     }
+    $conn = new mysqli("localhost", "root", "", "kalendarz");
+
     $pobierz = "SELECT nazwa, id FROM uzytkownik ";
-    $wynik = $conn->query($pobierz);
-    $ile_znalezionych = $wynik->num_rows;
-    
-    echo 'nazwa';
-    echo 'id';
-    for ($i=0; $i < $ile_znalezionych; $i++)
-    {
-        $wiersz = $wynik->fetch_assoc();
-        echo $wiersz['nazwa'];
-        echo $wiersz['id'];
-                
-    }
+    $result = $conn->query($pobierz);
+
 ?>
 
 
@@ -52,7 +44,13 @@
 
                 <label for="user">Użytkownik</label>
                 <select>
-
+                    <?php
+                if ($result->num_rows > 0) {
+                    while($row = $result->fetch_assoc()) {
+                    echo "<option>" . $row["nazwa"] . "</option>";
+                    }
+                } 
+                ?>
                 </select>
 
                 <input type="hidden" name="user2" value="<?php echo $_SESSION['id'] ?>">
