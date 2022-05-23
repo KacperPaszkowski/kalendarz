@@ -43,11 +43,11 @@
                 <input type="text" name="opis" id=""> </br></br>
 
                 <label for="user">Użytkownik</label>
-                <select>
+                <select name="user">
                     <?php
                 if ($result->num_rows > 0) {
                     while($row = $result->fetch_assoc()) {
-                    echo "<option>" . $row["nazwa"] . "</option>";
+                    echo "<option value=" . $row["id"] . ">" . $row["nazwa"] . "</option>";
                     }
                 } 
                 ?>
